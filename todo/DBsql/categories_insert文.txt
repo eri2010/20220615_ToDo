@@ -1,0 +1,15 @@
+
+INSERT INTO categories(
+category_name
+)
+VALUES(
+"プライベート"
+);
+
+
+INSERT INTO categories(
+category_name
+)
+VALUES(
+"仕事"
+);

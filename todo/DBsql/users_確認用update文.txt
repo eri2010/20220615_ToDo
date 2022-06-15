@@ -1,0 +1,2 @@
+
+UPDATE users SET for_search_id = "ccc" WHERE user_id = 1

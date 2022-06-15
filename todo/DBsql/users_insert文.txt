@@ -1,0 +1,45 @@
+
+INSERT INTO users(
+user_id
+,for_search_id
+,password
+,user_kbn
+,user_name
+,postal_code
+,address
+,job_code
+,mail_address
+)
+VALUES(
+0000000001
+,"aaa"
+,"test"
+,"01"
+,"山田　太郎"
+,"1110001"
+,"東京都新宿区"
+,"02"
+,"yamayama@tarou.jp"
+);
+
+
+INSERT INTO users(
+for_search_id
+,password
+,user_kbn
+,user_name
+,postal_code
+,address
+,job_code
+,mail_address
+)
+VALUES(
+,"bbb"
+,"mmm"
+,"01"
+,"小泉　太郎"
+,"1110002"
+,"東京都杉並区"
+,"02"
+,"koizumi@tarou.jp"
+);

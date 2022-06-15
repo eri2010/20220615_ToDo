@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>新規会員登録</title>
+</head>
+<body>
+<h1>SiginUp</h1>
+<!-- 管理者登録画面 -->
+<div th:if="${userKbn}== 1">
+	<form action="/addAccount" method="post" th:object="${User}">
+		<input type="text" name="userName" placeholder="name"><br>
+		<input type="email" name="mailAddress" placeholder="email"><br>
+		<input type="text" name="password"placeholder="password"><br>
+			<!-- 郵便番号はAPIを使用したものに変更予定 -->
+		<input type="text" name="postalCode" placeholder="〒"><br>
+		<input type="text" name="address" placeholder="address"><br>
+			<!-- 未選択の場合のエラー処理はjsで対処したい（今はServiceで処理） -->
+		<select name="jobCode">
+			<option value="" disabled selected style="display: none;">職業</option>
+			<option th:each = "job:${jobList}"
+					th:value ="${job.jobCode}" th:text="${job.jobName}">
+			</option>
+		</select>
+		<input type="hidden" value="01" name="userKbn">
+		<input type="submit" value="登録">
+	</form>
+</div>
+
+
+
+<!-- 一般登録画面 -->
+<div th:if="${userKbn}== 2">
+	<form action="/addAccount" method="post" th:object="${User}">
+		<input type="text" name="userName" placeholder="name"><br>
+		<input type="email" name="mailAddress" placeholder="email"><br>
+		<input type="text" name="password"placeholder="password"><br>
+		<input type="hidden" value="02" name="userKbn">
+		<input type="submit" value="登録"><br>
+	</form>
+</div>
+</body>
+</html>

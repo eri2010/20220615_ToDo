@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS team_categories CASCADE;
+
+CREATE TABLE team_categories(
+team_id int not null
+,category_id int not null
+,delete_flg  CHAR(01)  not null  DEFAULT  1
+,created_at  TIMESTAMP  not null  DEFAULT  CURRENT_TIMESTAMP
+,updated_at  TIMESTAMP  not null  DEFAULT  CURRENT_TIMESTAMP  ON UPDATE CURRENT_TIMESTAMP
+,PRIMARY  KEY  (team_id, category_id)
+,FOREIGN KEY team_id(team_id) REFERENCES teams(team_id)
+,FOREIGN KEY category_id(category_id) REFERENCES categories(category_id)
+);
+
